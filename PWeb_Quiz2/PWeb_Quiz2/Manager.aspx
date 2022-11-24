@@ -68,9 +68,18 @@
             -webkit-appearance: menulist-button;
             -webkit-rtl-ordering: logical;
         }
+
+        body {
+        background-image: url('Images/StudioBW5.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="Content/custom.css" rel="stylesheet" />
+
     <center>
         <div>
             <br />
@@ -78,21 +87,15 @@
             
             <div class="input-group">
                 <div class="form-inline">    
-                    <h3 class="alert alert-info">Manager Management</h3>          
+                    <h2 class="alert text-center title-text">Manager Management</h2>
                     <table border="0" cellpadding="5" cellspacing="5" class="table bg-success ">
                         <tr>
-                            <td>
-                                <span>User Name</span>
-                            </td>
-                            <td>
-                                <span>Password </span>
-                            </td>
-                            <td>
-                            </td>
+                            <th class="white-text">Manager Name</th>
+                            <th class="white-text">Password</th>
                         </tr>
                         <tr>
                             <td>
-                                <asp:TextBox runat="server" ID="txtStudentId" class="form-control" placeholder="User Name" required  CssClass="form-control"/>
+                                <asp:TextBox runat="server" ID="txtStudentId" class="form-control" placeholder="Manager Name" required  CssClass="form-control"/>
                             </td>
                             <td>
                                  <asp:TextBox runat="server" ID="txtStudentName" class="form-control" placeholder="Password" required CssClass="form-control"/>
@@ -109,7 +112,7 @@
             <br />
           <asp:GridView ID="GridView1" runat="server" 
                 CssClass="table table-responsive table-striped" AutoGenerateColumns="False" 
-                DataKeyNames="UserId" DataSourceID="LibraryDb">
+                DataKeyNames="UserId" DataSourceID="LibraryDb" Width="478px">
               <Columns>
                  
                   <asp:BoundField DataField="UserId" HeaderText="UserId" 

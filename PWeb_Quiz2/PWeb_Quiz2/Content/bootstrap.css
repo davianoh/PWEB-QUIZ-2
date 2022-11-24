@@ -222,6 +222,7 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  text-indent:0;
 }
 
 @media print {
@@ -1414,8 +1415,9 @@ th {
 }
 
 .table {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
     margin-left: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .table thead > tr > th,
@@ -2020,6 +2022,12 @@ textarea.input-lg {
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
+ transition-duration:1s;
+}
+
+.btn:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
 }
 
 .btn:focus {
@@ -2343,7 +2351,6 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.33;
   border-radius: 6px;
 }
-
 .btn-sm,
 .btn-xs {
   padding: 5px 10px;
@@ -4033,6 +4040,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .navbar:before,

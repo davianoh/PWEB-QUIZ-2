@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="alert login-text text-center">Tavi Studio Rental Management</h1>
+        <h1 class="alert login-text text-center">El-Tavi Studio Rental Management</h1>
         <form class="form-signin" runat="server">
             
             <label for="inputEmail" class="sr-only">User Name</label>
