@@ -20,6 +20,10 @@
     color: white;
 }
 
+.table-center{
+    position: center;
+}
+
 .title-text {
     color: #d2d2d2;
     background-color: #0300188a;

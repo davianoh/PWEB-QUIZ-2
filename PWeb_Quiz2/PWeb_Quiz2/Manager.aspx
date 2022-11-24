@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="EquipmentType.aspx.cs" Inherits="PWeb_Quiz2.EquipmentType" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="Manager.aspx.cs" Inherits="PWeb_Quiz2.Manager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .myddls {
@@ -68,79 +68,74 @@
             -webkit-appearance: menulist-button;
             -webkit-rtl-ordering: logical;
         }
-        body {
-        background-image: url('Images/StudioBW5.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        }
-    
-        .auto-style1 {
-            width: 70px;
-        }
-        .auto-style2 {
-            width: 200px;
-        }
-    
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="Content/custom.css" rel="stylesheet" />
-
     <center>
         <div>
             <br />
             <br />
             
             <div class="input-group">
-                <div class="form-inline">
-                    <h2 class="alert text-center title-text">Equipment Type Available</h2>
-                    <center>
-                        <table border="0" cellpadding="5" cellspacing="5" class="table bg-success table-center">
+                <div class="form-inline">    
+                    <h3 class="alert alert-info">Manager Management</h3>          
+                    <table border="0" cellpadding="5" cellspacing="5" class="table bg-success ">
                         <tr>
-                            <td class="auto-style2">
-                                <asp:TextBox runat="server" ID="txtStudentId" class="form-control" placeholder="Opportunity Type" required  CssClass="form-control"/>
-                            </td>                          
-                            
-                            <td class="auto-style1">
-                                <asp:Button Text="Add Type" runat="server" ID="btnAdd" 
+                            <td>
+                                <span>User Name</span>
+                            </td>
+                            <td>
+                                <span>Password </span>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:TextBox runat="server" ID="txtStudentId" class="form-control" placeholder="User Name" required  CssClass="form-control"/>
+                            </td>
+                            <td>
+                                 <asp:TextBox runat="server" ID="txtStudentName" class="form-control" placeholder="Password" required CssClass="form-control"/>
+                            </td>
+                            <td>
+                                <asp:Button Text="Add User" runat="server" ID="btnAdd" 
                                     class="btn btn-sm btn-primary" OnClick="btnAdd_Click" />
                             </td>
                         </tr>
                     </table>
-                    </center>
-                    
                 </div>
             </div>
             <br />
             <br />
           <asp:GridView ID="GridView1" runat="server" 
                 CssClass="table table-responsive table-striped" AutoGenerateColumns="False" 
-                DataKeyNames="OppId" DataSourceID="LibraryDb" Height="200px" style="margin-left: 0px; margin-right: 0px; margin-bottom: 0px" Width="300px">
+                DataKeyNames="UserId" DataSourceID="LibraryDb">
               <Columns>
                  
-                  <asp:BoundField DataField="OppId" HeaderText="OppId" 
-                      SortExpression="OppId" ReadOnly="True" Visible="False" InsertVisible="False"  />
-                  <asp:BoundField DataField="Name" HeaderText="Type" 
-                      SortExpression="Name" />
-                  <asp:BoundField DataField="CreatedbyUserId" HeaderText="CreatedbyUserId" 
-                      SortExpression="CreatedbyUserId" Visible="False" />
-                   <asp:CommandField ShowEditButton="True" />
+                  <asp:BoundField DataField="UserId" HeaderText="UserId" 
+                      SortExpression="UserId" ReadOnly="True" InsertVisible="False" Visible="False"  />
+                  <asp:BoundField DataField="UserName" HeaderText="User Name" 
+                      SortExpression="UserName" />
+                    <asp:BoundField DataField="Pwd" HeaderText="Password" SortExpression="Pwd" />
+                   <asp:CommandField  ShowEditButton="True" />
               </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="LibraryDb" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:SalesConnectionString %>"                
-                DeleteCommand="DELETE FROM [OppType_Table] WHERE [OppId] = @OppId"                 
-                UpdateCommand="UPDATE [OppType_Table] SET [Name] = @Name WHERE [OppId] = @OppId">
+                ConnectionString="<%$ ConnectionStrings:SalesConnectionString %>" 
+                SelectCommand="SELECT * FROM [Users_Table] Where [Role]='Manager'" 
+                DeleteCommand="DELETE FROM [Users_Table] WHERE [UserId] = @UserId" 
+                UpdateCommand="UPDATE [Users_Table] SET [UserName] = @UserName, [Pwd] = @Pwd  WHERE [UserId] = @UserId">
                 <DeleteParameters>
-                    <asp:Parameter Name="OppId" Type="Int32" />
+                    <asp:Parameter Name="UserId" Type="Int32" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Name" Type="String" />
+                    <asp:Parameter Name="UserName" Type="String" />
+                    <asp:Parameter Name="Pwd" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="OppId" Type="Int32" />
+                    <asp:Parameter Name="UserName" Type="String" />
+                    <asp:Parameter Name="Pwd" Type="String" />
+                    <asp:Parameter Name="UserId" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
         </div>

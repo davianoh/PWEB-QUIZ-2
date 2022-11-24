@@ -94,6 +94,7 @@
     <Content Include="Images\StudioBW6.jpg" />
     <Content Include="Images\StudioBW7.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Manager.aspx" />
     <Content Include="ManagerLogin\4ManagerHome.png" />
     <Content Include="ManagerLogin\5SalesManagement.png" />
     <Content Include="ManagerLogin\6SalesAnnouncement.png" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.aspx.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.aspx.designer.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservations.aspx.cs">

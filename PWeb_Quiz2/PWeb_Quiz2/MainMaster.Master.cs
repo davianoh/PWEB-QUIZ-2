@@ -29,7 +29,7 @@ namespace PWeb_Quiz2
                             myrole = "<ul class='nav navbar-nav' id='mManager'><li><a href='Home.aspx'>Home</a></li><li><a href='Studio.aspx'>Studio</a></li><li><a href='Announcement.aspx'>Announcements</a></li></ul>";
                             break;
                         case "Admin":
-                            myrole = "<ul class='nav navbar-nav' id='mAdmin'><li><a href='Home.aspx'>Home</a></li><li><a href='CreateManager.aspx'>Manager</a></li></ul>";
+                            myrole = "<ul class='nav navbar-nav' id='mAdmin'><li><a href='Home.aspx'>Home</a></li><li><a href='Manager.aspx'>Manager</a></li></ul>";
                             break;
                         default:
                             break;

@@ -33,6 +33,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="Content/custom.css" rel="stylesheet" />
+
     <center>
         <div>
             <br />
@@ -40,7 +42,7 @@
             
             <div class="input-group">
                 <div class="form-inline">    
-                    <h2 class="alert alert-info text-center">Studio Reservations</h2>          
+                    <h2 class="alert text-center title-text">Reservation Schedule</h2>        
                     <table border="0" cellpadding="5" cellspacing="5" class="table bg-success table-responsive " style="margin-left: 0px">
                          <tr class="alert-danger">
                             <td class="auto-style5">
